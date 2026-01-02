@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Solo para Noe</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: linear-gradient(to bottom, #6b4a36, #f6f2ec);
+    color: #3b2a1f;
+    overflow-x: hidden;
+}
+
+/* SECCIONES */
+.seccion {
+    min-height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+}
+
+#pagina1 {
+    display: flex;
+}
+
+/* TARJETA */
+.tarjeta {
+    background: #fffdf8;
+    max-width: 900px;
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 5; /* carta */
+}
+
+/* PETALOS FIJOS */
+.tarjeta::before,
+.tarjeta::after {
+    content: "❀ ❀ ❀ ❀ ❀";
+    position: absolute;
+    color: rgba(74, 48, 32, 0.9);
+    font-size: 25px;
+    letter-spacing: 16px;
+    pointer-events: none;
+}
+
+.tarjeta::before {
+    top: 20px;
+    left: 30px;
+}
+
+.tarjeta::after {
+    bottom: 20px;
+    right: 30px;
+}
+
+/* TEXTOS */
+h1 {
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* BOTONES */
+button {
+    display: block;
+    margin: 40px auto 0;
+    padding: 15px 35px;
+    border-radius: 30px;
+    border: none;
+    background: #e6dfd6;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* INPUT */
+input {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px;
+    width: 70%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #cfc7bb;
+    text-align: center;
+    font-family: Georgia, serif;
+}
+
+/* ERROR */
+#error {
+    color: #8b3a3a;
+    margin-top: 20px;
+    display: none;
+}
+
+/* RAZONES */
+.razones {
+    margin-top: 30px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.razones p {
+    text-align: left;
+    margin: 12px 0;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+/* FLORES CAYENDO (DELANTE) */
+.flor {
+    position: fixed;
+    top: -50px;
+    font-size: 26px;
+    color: rgba(10, 25, 80, 0.95); /* azul marino elegante */
+    animation-name: caer;
+    animation-timing-function: linear;
+    pointer-events: none;
+    z-index: 20; /* 🔥 AHORA ESTÁN DELANTE */
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="musica" loop>
+    <source src="media-luna.mp3" type="audio/mpeg">
+</audio>
+
+<div class="seccion" id="pagina1">
+    <div class="tarjeta">
+        <h1>Antes de seguir</h1>
+        <p>Si no eres Noelia del Pilar García Meza Coronel, sal de aquí.</p>
+        <p>Si eres Noe, aprieta este botón.</p>
+        <button onclick="irPregunta()">Soy Noe 🤍</button>
+    </div>
+</div>
+
+<div class="seccion" id="paginaPregunta">
+    <div class="tarjeta">
+        <h1>No creas que será tan fácil</h1>
+        <p>Para ver las razones responde esta simple pregunta:</p>
+        <p><strong>¿Cuál es el apodo de mi abuelo paterno?</strong></p>
+
+        <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí">
+        <button onclick="verificar()">Responder</button>
+        <p id="error">Mmm… esa no es la respuesta correcta</p>
+    </div>
+</div>
+
+<div class="seccion" id="pagina2">
+    <div class="tarjeta">
+        <h1>100 razones por las que creo en un nuevo nosotros</h1>
+        <p class="titulo-corazon">
+    <span class="corazon">♡</span>
+    En la mejor versión de Dotiros con Miel.
+    <span class="corazon">♡</span>
+</p>
+
+        <div class="razones" id="contenedorRazones">
+           <p>1. Porque desde el primer instante lo nuestro se sintió verdadero.</p>
+<p>2. Porque tu sonrisa sigue siendo el mejor paisaje.</p>
+<p>3. Porque tus abrazos siempre fueron mi refugio.</p>
+<p>4. Porque nos falta casarnos.</p>
+<p>5. Porque todavía me pierdo en tus ojos bellos.</p>
+<p>6. Porque tu risa sigue siendo mi sonido favorito.</p>
+<p>7. Porque tenemos que ir a Grecia por nuestra luna de miel.</p>
+<p>8. Porque contigo amar nunca fue complicado.</p>
+<p>9. Porque me gustaba la persona que era cuando estaba contigo.</p>
+<p>10. Porque mis días cobraban sentido a tu lado.</p>
+<p>11. Porque fuiste, y sigues siendo, el amor de mi vida.</p>
+<p>12. Porque nos falta conocer el mundo juntos.</p>
+<p>13. Porque tu nombre aún me mueve el mundo entero.</p>
+<p>14. Porque contigo el tiempo tenía otra velocidad.</p>
+<p>15. Porque tenemos que construir nuestra casita con ventanas enormes.</p>
+<p>16. Porque nuestras miradas hablaban sin palabras.</p>
+<p>17. Porque contigo nunca tuve que fingir.</p>
+<p>18. Porque a tu lado siempre fui yo mismo.</p>
+<p>19. Porque me enseñaste a amar.</p>
+<p>20. Porque contigo aprendí a pensar en alguien mas que no sea yo.</p>
+<p>21. Porque extraño nuestras conversaciones infinitas.</p>
+<p>22. Porque echo de menos nuestras llamadas.</p>
+<p>23. Porque extraño tu forma única de amar.</p>
+<p>24. Porque extraño cómo me abrazabas.</p>
+<p>25. Porque extraño simplemente tu presencia.</p>
+<p>26. Porque contigo descubrí lo que quiero en la vida.</p>
+<p>27. Porque contigo entendí lo que es una conexión real.</p>
+<p>28. Porque amar contigo tenía sentido.</p>
+<p>29. Porque nuestras historias siguen importándome.</p>
+<p>30. Porque nuestros recuerdos aún son parte de mí.</p>
+<p>31. Porque tu cariño dejó una huella profunda.</p>
+<p>32. Porque tu amor me marcó para siempre.</p>
+<p>33. Porque tenemos muchos planes que cumplir.</p>
+<p>34. Porque nadie te conoce mejor que yo</p>
+<p>35. Porque nadie me conoce mejor tu</p>
+<p>36. Porque contigo el corazón se abrió sin miedo.</p>
+<p>37. Porque tu amor se sentía como hogar.</p>
+<p>38. Porque todavía te pienso con ternura.</p>
+<p>39. Porque aún te recuerdo con amor.</p>
+<p>40. Porque sigues importándome.</p>
+<p>41. Porque te llevo conmigo a donde vaya.</p>
+<p>42. Porque nunca te saqué del corazón.</p>
+<p>43. Porque contigo aprendí a soñar en grande.</p>
+<p>44. Porque contigo imaginé un futuro real.</p>
+<p>45. Porque tus manos encajaban perfecto con las mías.</p>
+<p>46. Porque tu presencia hacía todo mejor.</p>
+<p>47. Porque aún te siento cerca en cada atardecer.</p>
+<p>48. Porque nuestro amor nos daba paz.</p>
+<p>49. Porque tu amor fue luz en mi vida.</p>
+<p>50. Porque contigo me sentí elegido.</p>
+<p>51. Porque contigo me sentí suficiente.</p>
+<p>52. Porque contigo me sentí amado.</p>
+<p>53. Porque contigo me sentí cuidado.</p>
+<p>54. Porque aún hoy me nace elegirte.</p>
+<p>55. Porque una conexión así no se corta.</p>
+<p>56. Porque lo real no se olvida jamás.</p>
+<p>57. Porque amar también es respetar.</p>
+<p>58. Porque lo nuestro merece otra oportunidad.</p>
+<p>59. Porque mi familia te amó desde el segundo 0.</p>
+<p>60. Porque juntos nos potenciamos a ser mejores.</p>
+<p>61. Porque creo en lo que construimos juntos.</p>
+<p>62. Porque creo en lo que aún podemos ser.</p>
+<p>63. Porque contigo aprendí a amar sin miedo.</p>
+<p>64. Porque nuestro amor fue valiente.</p>
+<p>65. Porque mi corazón se quedó contigo.</p>
+<p>66. Porque aún creo quepodemos ser tu y yo, Yo y Yo.</p>
+<p>67. Porque todavía te elijo con el corazón.</p>
+<p>68. Porque te pienso con amor, incluso en la distancia.</p>
+<p>69. Porque aún siento a nuestras almas cerca.</p>
+<p>70. Porque sigo amando cada parte de ti.</p>
+<p>71. Porque fue un amor sincero.</p>
+<p>72. Porque fue un amor profundo.</p>
+<p>73. Porque nuestra conexión es de una en una vida.</p>
+<p>74. Porque lo nuestro fue único.</p>
+<p>75. Porque contigo el amor fue verdad.</p>
+<p>76. Porque contigo fui genuinamente feliz.</p>
+<p>77. Porque contigo sonreí de verdad.</p>
+<p>78. Porque hay partes de mi que solo exisen cuando estás tu.</p>
+<p>79. Porque contigo aprendí a sentir sin miedo.</p>
+<p>80. Porque aún te amo</p>
+<p>81. Porque perderte todavía duele.</p>
+<p>82. Porque aún me importa cuidarte.</p>
+<p>83. Porque deseo siempre tu bienestar.</p>
+<p>84. Porque quiero verte consiguiendo todo lo que te propones.</p>
+<p>85. Porque quiero verte feliz.</p>
+<p>86. Porque contigo el amor fue puro.</p>
+<p>87. Porque contigo el amor fue hermoso.</p>
+<p>88. Porque contigo el amor fue refugio.</p>
+<p>89. Porque contigo el amor fue paz.</p>
+<p>90. Porque contigo el amor fue real.</p>
+<p>91. Porque llevo tu amor conmigo.</p>
+<p>92. Porque guardo tu esencia.</p>
+<p>93. Porque guardo lo nuestro con respeto.</p>
+<p>94. Porque aún conservo tu luz.</p>
+<p>95. Porque mi corazón aún te nombra.</p>
+<p>96. Porque sigues siendo parte de mí.</p>
+<p>97. Porque siempre estás en mi corazoncito.</p>
+<p>98. Porque ahora te amo con más respeto.</p>
+<p>99. Porque todo mi hogar extraña tu presencia.</p>
+            <p>100. Porque te amo con cada parte de mi Noelita, niña de los ojos preciosos, pestañas bellas, cabello precioso, corazón hermoso, mi wipi niu… te amo PATOda la vida.</p>
+        </div>
+
+        <footer id="footerFinal">
+            Contigo soy yo, tú el motor del barco.
+        </footer>
+    </div>
+</div>
+
+<script>
+function irPregunta() {
+    document.getElementById("pagina1").style.display = "none";
+    document.getElementById("paginaPregunta").style.display = "flex";
+}
+
+function verificar() {
+    const respuesta = document.getElementById("respuesta").value.trim().toLowerCase();
+
+    if (respuesta === "coco") {
+        document.getElementById("paginaPregunta").style.display = "none";
+        document.getElementById("pagina2").style.display = "flex";
+
+        document.getElementById("musica").play();
+        activarFooter();
+        iniciarFlores();
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
+}
+
+function activarFooter() {
+    const contenedor = document.getElementById("contenedorRazones");
+    const footer = document.getElementById("footerFinal");
+
+    contenedor.addEventListener("scroll", () => {
+        if (contenedor.scrollTop + contenedor.clientHeight >= contenedor.scrollHeight - 5) {
+            footer.style.opacity = "1";
+        }
+    });
+}
+
+function iniciarFlores() {
+    setInterval(() => {
+        const flor = document.createElement("div");
+        flor.className = "flor";
+        flor.textContent = "❀";
+        flor.style.left = Math.random() * 100 + "vw";
+        flor.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+        document.body.appendChild(flor);
+
+        setTimeout(() => flor.remove(), 12000);
+    }, 500);
+}
+</script>
+
+</body>
+</html>
